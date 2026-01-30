@@ -1,9 +1,13 @@
-import React from 'react'
+import React from 'react';
+import ProductCard from '../Componentes/ProductCard';
 
 const ProductListingPage = () => {
   return (
-    <div>ProductListingPage</div>
-  )
-}
+    <div className="flex">
+      <div>teste</div>
+      <ProductCard />
+    </div>
+  );
+};
 
-export default ProductListingPage
+export default ProductListingPage;
