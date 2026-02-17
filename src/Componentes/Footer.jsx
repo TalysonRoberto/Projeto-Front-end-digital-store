@@ -23,7 +23,7 @@ const Footer = () => {
   return (
     <footer className="bg-gray-900 text-white py-3 px-4 md:py-3 md:px-8 mt-auto">
       <div className="grid grid-nogutter container mx-auto pt-5">
-        {/* COLUNA 1: Logo (Mantida) */}
+        {/* COLUNA 1: Logo */}
         <div className="col-12 md:col-4 mb-5 md:mb-0 pr-0 md:pr-6">
           <Logo vlogo="footer" />
           <p className="line-height-3 text-gray-300 mb-4 max-w-20rem mt-6">
@@ -37,21 +37,21 @@ const Footer = () => {
           </div>
         </div>
 
-        {/* COLUNA 2: Informação (Componentizada) */}
+        {/* COLUNA 2: Informação */}
         <Informacoes
           titulo="Informação"
           lista={infoLinks}
           className="col-6 md:col-2 mb-5 md:mb-0"
         />
 
-        {/* COLUNA 3: Categorias (Componentizada) */}
+        {/* COLUNA 3: Categorias */}
         <Informacoes
           titulo="Categorias"
           lista={categoriaLinks}
           className="col-6 md:col-2 mb-5 md:mb-0"
         />
 
-        {/* COLUNA 4: Contato (Mantida por ter estrutura de parágrafos) */}
+        {/* COLUNA 4: Contato */}
         <div className="col-12 md:col-4">
           <h4 className="text-xl font-bold mb-4">Contato</h4>
           <div className="text-gray-400 flex flex-column gap-4">
@@ -65,6 +65,7 @@ const Footer = () => {
       </div>
 
       <div className="border-top-1 border-gray-700 mt-6 pt-4 text-center">
+        {/* Pegando ano atual */}
         <p className="text-sm text-gray-500 m-0">
           @ {new Date().getFullYear()} Digital College
         </p>

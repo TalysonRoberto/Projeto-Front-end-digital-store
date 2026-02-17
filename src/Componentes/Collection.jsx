@@ -3,8 +3,6 @@ import col1 from '../img/collection-1.png';
 import col2 from '../img/collection-2.png';
 import col3 from '../img/collection-3.png';
 
-//*********************** Ajusta as cores das coisas ******************************* */
-
 const Collection = () => {
   return (
     <div className="w-full flex flex-column gap-3 align-content-center md:justify-content-center md:flex-row">
@@ -100,7 +98,7 @@ const Collection = () => {
           Comprar
         </a>
       </div>
-      {/*Que legalzinho*/}
+      {/* Ta top */}
     </div>
   );
 };

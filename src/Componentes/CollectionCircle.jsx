@@ -9,7 +9,7 @@ const CollectionCircle = () => {
   return (
     <div className="w-full flex justify-content-center overflow-hidden">
       <ul className="flex list-none gap-5 overflow-x-auto white-space-nowrap pb-3 custom-scrollbar sm:6 md:pr-0">
-        {/*Camisetas*/}
+        {/* Camisetas */}
         <li className="flex flex-column align-items-center flex-shrink-0">
           <div className="bg-white h-6rem w-6rem border-circle flex align-items-center justify-content-center">
             <img src={camisa} alt="Camisetas" />
@@ -17,7 +17,7 @@ const CollectionCircle = () => {
           <p className="text-l font-semibold text-gray-800 m-none">Camisetas</p>
         </li>
 
-        {/*Calças*/}
+        {/* Calças */}
         <li className="flex flex-column align-items-center flex-shrink-0">
           <div className="bg-white h-6rem w-6rem border-circle flex align-items-center justify-content-center">
             <img src={calcas} alt="Camisetas" />
@@ -25,7 +25,7 @@ const CollectionCircle = () => {
           <p className="text-l font-semibold text-gray-800 m-none">Calças</p>
         </li>
 
-        {/*Bonés*/}
+        {/* Bonés */}
         <li className="flex flex-column align-items-center flex-shrink-0">
           <div className="bg-white h-6rem w-6rem border-circle flex align-items-center justify-content-center">
             <img src={calcas} alt="Camisetas" />
@@ -33,7 +33,7 @@ const CollectionCircle = () => {
           <p className="text-l font-semibold text-gray-800 m-none">Bonés</p>
         </li>
 
-        {/*Headphones*/}
+        {/* Headphones */}
         <li className="flex flex-column align-items-center flex-shrink-0">
           <div className="bg-white  h-6rem w-6rem border-circle flex align-items-center justify-content-center">
             <img src={headphone} alt="Camisetas" className="ml-1" />
@@ -43,7 +43,7 @@ const CollectionCircle = () => {
           </p>
         </li>
 
-        {/*Tênis*/}
+        {/* Tênis */}
         <li className="flex flex-column align-items-center flex-shrink-0">
           <div className="bg-white  h-6rem w-6rem border-circle flex align-items-center justify-content-center">
             <img src={Tenis} alt="Camisetas" />

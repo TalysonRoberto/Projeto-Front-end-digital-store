@@ -1,12 +1,14 @@
 import React from 'react';
 
 const Section = ({ title, titleAlign, link, children, color }) => {
+  // Resebendo a posiçao do texto
   const alignmentClass =
     titleAlign === 'center'
       ? 'justify-content-center'
       : 'justify-content-between';
 
-  const colorsection = color === 'bg-white' ? 'bg-white' : 'surface-100';
+  // Manupulando a cor da pagina
+  const colorsection = color === 'bg-white' ? 'bg-white' : '';
 
   return (
     <section
@@ -16,7 +18,9 @@ const Section = ({ title, titleAlign, link, children, color }) => {
       {/* props */}
       <div className={`flex align-items-center mb-4 ${alignmentClass}`}>
         {/* Título */}
-        <p className="text-2xl font-bold text-gray-800 m-none">{title}</p>
+        <p className="text-x1 md:text-2xl font-bold text-gray-800 m-none">
+          {title}
+        </p>
 
         {/* Link se tiver */}
         {link && (
@@ -32,6 +36,7 @@ const Section = ({ title, titleAlign, link, children, color }) => {
 
       {/* children */}
       <div className="flex justify-content-center">{children}</div>
+      {/* Gosteio de mais desse elemento híbrido ... uma mao na roda*/}
     </section>
   );
 };

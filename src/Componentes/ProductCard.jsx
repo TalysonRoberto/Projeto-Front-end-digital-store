@@ -1,344 +1,39 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { todosProdutos as dadosLocais } from '../data/produtos';
 
-const ProductCard = ({ quantidade }) => {
-  // Lista de procutos
-  const todosProdutos = [
-    {
-      id: 1,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 2,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 3,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 4,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 5,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 6,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 7,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 8,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 9,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 10,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 11,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 12,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 13,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 14,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 15,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-    {
-      id: 16,
-      name: 'Nome do produto 1',
-      image: '/produtos/K-Swiss V8 - Masculino.png',
-      price: 200,
-      priceDiscount: 149.9,
-      category: 'Tênis',
-      informacao:
-        'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.',
-      tamanhos: ['39', '40', '41', '42'],
-      avaliação: 4,
-      imgs: [
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-        '/produtos/K-Swiss V8 - Masculino.png',
-      ],
-    },
-  ];
-
-  // Verifica a quantidade de itens solicitado
-  const produtosExibidos = quantidade
-    ? todosProdutos.slice(0, quantidade)
-    : todosProdutos;
-
-  // Passa os parâmetros para a página de mais informações do produto
+const ProductCard = ({ quantidade, itensFiltrados, itemCol = 'md:col-3' }) => {
+  const [produtos, setProdutos] = useState([]);
   const navigate = useNavigate();
+  // Abrir o produto
   const handleCardClick = (produto) => {
     navigate(`/Visualizar/${produto.id}`, { state: { produto } });
   };
+  // Pegar a quantidade de item
+  useEffect(() => {
+    const baseDeDados = itensFiltrados ? itensFiltrados : dadosLocais;
+    const dadosParaExibir = quantidade
+      ? baseDeDados.slice(0, quantidade)
+      : baseDeDados;
+    setProdutos(dadosParaExibir);
+  }, [quantidade, itensFiltrados]);
 
   return (
-    <div className="grid grid-nogutter justify-content-center">
-      {produtosExibidos.map((prod) => (
+    <div className="grid grid-nogutter">
+      {produtos.map((prod) => (
         <div
           key={prod.id}
-          className="col-6 md:col-3 p-2 flex justify-content-center cursor-pointer"
+          className={`col-6 ${itemCol} p-2 flex justify-content-center cursor-pointer`}
           onClick={() => handleCardClick(prod)}
         >
           <div
             className="flex flex-column w-full"
             style={{ maxWidth: '282px' }}
           >
-            {/* Quadrado card */}
+            {/* Quadrado da Imagem */}
             <div
               className="bg-white flex align-items-center justify-content-center relative shadow-1 border-round-sm overflow-hidden"
-              style={{
-                aspectRatio: '1 / 1.1',
-                width: '100%',
-              }}
+              style={{ aspectRatio: '1 / 1.1', width: '100%' }}
             >
               <img
                 src={prod.image}
@@ -347,7 +42,6 @@ const ProductCard = ({ quantidade }) => {
                 style={{ objectFit: 'contain' }}
               />
 
-              {/* Descontinho */}
               {prod.priceDiscount && (
                 <span
                   className="absolute font-bold w-4rem md:w-5rem h-2rem flex align-items-center justify-content-center border-round-3xl text-xs md:text-sm"
@@ -365,24 +59,20 @@ const ProductCard = ({ quantidade }) => {
               )}
             </div>
 
-            {/* Informações basica*/}
+            {/* Informações básicas */}
             <div className="text-left">
-              {/* Categoria */}
               <p className="text-xs font-bold pt-3 m-0 uppercase text-500">
                 {prod.category}
               </p>
-              {/* Nome */}
               <h3 className="font-normal text-base md:text-xl my-1 text-gray-800 overflow-hidden text-overflow-ellipsis white-space-nowrap">
                 {prod.name}
               </h3>
-              {/* Preço */}
               <div className="flex align-items-center gap-2">
                 <span
                   className={`font-normal text-lg md:text-xl ${prod.priceDiscount ? 'line-through text-400' : 'text-gray-900 font-bold'}`}
                 >
                   ${prod.price}
                 </span>
-                {/* Desconto */}
                 {prod.priceDiscount && (
                   <span className="font-bold text-lg md:text-xl text-gray-900">
                     ${prod.priceDiscount}
@@ -393,7 +83,6 @@ const ProductCard = ({ quantidade }) => {
           </div>
         </div>
       ))}
-      {/* haha eu sou sensacional */}
     </div>
   );
 };

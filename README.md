@@ -1,16 +1,64 @@
-# React + Vite
+# 👟 Projeto Front-end Digital Store
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este é um projeto de uma **loja virtual** (E-commerce) desenvolvido como parte do curso de **Full Stack**. O objetivo principal é aplicar conceitos avançados de React, componentização e design responsivo.
 
-Currently, two official plugins are available:
+🔗 **Repositório:** `Projeto-Front-end-digital-store`
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias Utilizadas
 
-## React Compiler
+- **React**: Biblioteca base para a construção da SPA (Single Page Application).
+- **PrimeReact**: Componentes de UI de alta performance (Galleria, Sidebar, Dropdown).
+- **PrimeFlex**: Framework CSS utilitário para layouts flexíveis e responsivos.
+- **React Router Dom**: Gestão de rotas para navegação entre páginas.
+- **PrimeIcons**: Conjunto de ícones vetoriais.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 📂 Estrutura do Projeto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+Baseado na arquitetura do sistema, o projeto está organizado da seguinte forma:
+
+- **`src/Componentes/`**: Componentes reutilizáveis como `ProductCard`, `FilterCheckbox`, `Header`, `Footer` e a `Gallery` do banner.
+- **`src/Pages/`**: Páginas principais da aplicação:
+  - `HomePage`: Vitrine com banners e coleções em destaque.
+  - `ProductListingPage`: Listagem de produtos com filtros avançados.
+  - `ProductViewPage`: Detalhes específicos de um produto selecionado.
+- **`src/data/`**: Arquivos de dados (como `produtos.js`) que simulam uma API para alimentar a loja.
+- **`public/`**: Ativos estáticos como SVGs e imagens de produtos.
+
+---
+
+## ✨ Funcionalidades Implementadas
+
+### 🛒 Loja Virtual Completa
+
+- **Navegação entre Páginas**: Sistema de rotas para transição suave entre home, listagem e visualização de produtos.
+- **Galeria Infinita**: Banner principal com transição automática e contínua, mesmo após interação do usuário.
+- **Filtros Inteligentes**: Filtragem por marca, categoria, gênero e estado do produto.
+- **Ordenação Dinâmica**: Ordenação por preço (maior/menor) e relevância.
+
+### 📱 Experiência Mobile (Mobile First)
+
+- **Sidebar de Filtros**: Menu lateral retrátil (off-canvas) que respeita a altura do Header para melhor usabilidade em dispositivos móveis.
+- **Layout Responsivo**: Grid que se adapta automaticamente de 4 colunas no desktop para 2 colunas no celular.
+
+---
+
+## 🛠️ Como Executar o Projeto
+
+1. Clone o repositório:
+   ```bash
+   git clone [https://github.com/seu-usuario/Projeto-Front-end-digital-store.git](https://github.com/TalysonRoberto/Projeto-Front-end-digital-store.git)
+   ```
+2. instale as dependências:
+   ```
+   npm install
+   ```
+3. Certifique-se de ter as bibliotecas do Prime instaladas:
+   ```
+   npm install primereact primeicons primeflex
+   ```
+4. Inicie o servidor de desenvolvimento::
+   ```
+   npm run dev
+   ```

@@ -16,7 +16,7 @@ const Header = () => {
     { label: 'Home', url: '/' },
     { label: 'Produtos', url: '/Produtos' },
     { label: 'Categorias', url: '/Visualizar' },
-    { label: 'Meus Pedidos', url: '/pedidos' },
+    { label: 'Meus Pedidos', url: '/Pedidos' },
   ];
 
   return (
@@ -110,7 +110,7 @@ const Header = () => {
             className="w-full flex align-items-center"
           >
             <InputText
-              autoFocus // Abre e já foca para o usuário digitar
+              autoFocus
               placeholder="Pesquisar produto..."
               className="w-full border-none p-3 shadow-none"
               style={{
@@ -127,7 +127,7 @@ const Header = () => {
       {/* Navegação tela grande */}
       <nav className="hidden md:flex gap-4">
         {navLinks.map((link) => {
-          // Agora isActive compara a URL atual com a URL do link
+          // compara a URL atual com a URL do link
           const isActive = location.pathname === link.url;
 
           return (
@@ -153,7 +153,7 @@ const Header = () => {
       {visible && (
         <div
           className="md:hidden w-full bg-white absolute left-0 z-5 p-4 border-gray-100"
-          style={{ top: '70px' }} // Ajuste esse valor para a altura exata do seu Header
+          style={{ top: '70px' }}
         >
           <div className="flex flex-column h-full">
             <h3
