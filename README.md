@@ -48,7 +48,7 @@ Baseado na arquitetura do sistema, o projeto está organizado da seguinte forma:
 
 1. Clone o repositório:
    ```bash
-   git clone [https://github.com/seu-usuario/Projeto-Front-end-digital-store.git](https://github.com/TalysonRoberto/Projeto-Front-end-digital-store.git)
+   git clone [https://github.com/TalysonRoberto/Projeto-Front-end-digital-store.git]
    ```
 2. instale as dependências:
    ```
