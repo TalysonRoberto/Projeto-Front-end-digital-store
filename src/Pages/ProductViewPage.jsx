@@ -41,7 +41,12 @@ const ProductViewPage = () => {
       <Section
         title="Produtos em alta"
         titleAlign="left"
-        link={[{ text: 'Show More', href: '/Produtos' }]}
+        link={[
+          {
+            text: 'Show More',
+            href: '/Projeto-Front-end-digital-store/Produtos',
+          },
+        ]}
       >
         {/* Passando novamente a quantidade de produto a ser exibido*/}
         <ProductCard quantidade={4} />

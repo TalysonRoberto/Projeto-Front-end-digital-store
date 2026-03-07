@@ -36,7 +36,7 @@ const ProductCard = ({ quantidade, itensFiltrados, itemCol = 'md:col-3' }) => {
               style={{ aspectRatio: '1 / 1.1', width: '100%' }}
             >
               <img
-                src={prod.image}
+                src={`${import.meta.env.BASE_URL}${prod.image}`}
                 alt={prod.name}
                 className="w-full h-full p-3"
                 style={{ objectFit: 'contain' }}

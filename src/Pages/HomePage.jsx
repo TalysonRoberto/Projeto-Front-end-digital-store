@@ -8,14 +8,14 @@ import Ofertaespecial from '../Componentes/Ofertaespecial';
 
 const HomePage = () => {
   const slideImages = [
-    { src: '/produtos/prod11.png' },
-    { src: '/produtos/prod9.png' },
-    { src: '/produtos/prod15.png' },
-    { src: '/produtos/prod10.png' },
-    { src: '/produtos/prod8.png' },
-    { src: '/produtos/prod7.png' },
-    { src: '/produtos/prod5.png' },
-    { src: '/produtos/prod16.png' },
+    { src: 'produtos/prod11.png' },
+    { src: 'produtos/prod9.png' },
+    { src: 'produtos/prod15.png' },
+    { src: 'produtos/prod10.png' },
+    { src: 'produtos/prod8.png' },
+    { src: 'produtos/prod7.png' },
+    { src: 'produtos/prod5.png' },
+    { src: 'produtos/prod16.png' },
   ];
 
   return (
@@ -37,7 +37,12 @@ const HomePage = () => {
       <Section
         title="Produtos em alta"
         titleAlign="left"
-        link={[{ text: 'Show More', href: '/Produtos' }]}
+        link={[
+          {
+            text: 'Show More',
+            href: '/Projeto-Front-end-digital-store/Produtos',
+          },
+        ]}
       >
         {/* Passando a quantidade apra ser exibido */}
         <ProductCard quantidade={8} />

@@ -1,27 +1,32 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom'; // Rotas
-import 'primereact/resources/themes/saga-blue/theme.css'; // Tema PrimeReact
-import 'primereact/resources/primereact.min.css'; // Estilos PrimeReact
-import 'primeicons/primeicons.css'; // Ícones PrimeReact
-import 'primeflex/primeflex.css'; // PrimeFlex para utilitários CSS
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
+// PrimeReact
+import 'primereact/resources/themes/saga-blue/theme.css';
+import 'primereact/resources/primereact.min.css';
+import 'primeicons/primeicons.css';
+import 'primeflex/primeflex.css';
 import 'primeflex/themes/primeone-light.css';
+
+// Layout e páginas
 import PageLayout from './PageLayout';
-import HomePage from './Pages/HomePage'; // Home
-import ProductListingPage from './Pages/ProductListingPage'; // Lista de produtos
-import ProductViewPage from './Pages/ProductViewPage'; // Visualiza produtos
-import Notfound from './Componentes/Notfound'; // Página não encontrada
+import HomePage from './Pages/HomePage';
+import ProductListingPage from './Pages/ProductListingPage';
+import ProductViewPage from './Pages/ProductViewPage';
+import Notfound from './Componentes/Notfound';
 
 function App() {
   return (
-    <BrowserRouter>
+    <BrowserRouter basename="/Projeto-Front-end-digital-store">
       <Routes>
         <Route path="/" element={<PageLayout />}>
-          {/*Páginas*/}
+          {/* Páginas */}
           <Route index element={<HomePage />} />
-          <Route path="/Produtos" element={<ProductListingPage />} />
-          <Route path="/Visualizar/:id" element={<ProductViewPage />} />
-          {/*Notfound*/}
-          <Route path="/*" element={<Notfound />} />
+          <Route path="Produtos" element={<ProductListingPage />} />
+          <Route path="Visualizar/:id" element={<ProductViewPage />} />
+
+          {/* Not found */}
+          <Route path="*" element={<Notfound />} />
         </Route>
       </Routes>
     </BrowserRouter>
