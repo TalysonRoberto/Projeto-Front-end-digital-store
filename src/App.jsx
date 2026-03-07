@@ -26,8 +26,8 @@ function App() {
           <Route path="Visualizar/:id" element={<ProductViewPage />} />
 
           {/* Not found */}
-          <Route path="*" element={<Notfound />} />
         </Route>
+        <Route path="*" element={<Notfound />} />
       </Routes>
     </BrowserRouter>
   );
