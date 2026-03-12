@@ -62,3 +62,6 @@ Baseado na arquitetura do sistema, o projeto está organizado da seguinte forma:
    ```
    npm run dev
    ```
+
+
+### Desenvolvido por Talyson Roberto Nascimento Sousa
